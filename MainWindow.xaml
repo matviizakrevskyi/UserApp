@@ -7,5 +7,24 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Users app" Height="600" Width="800">
-    
+    <Grid Background="#ffdadada">
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Hello!!!" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <Grid Margin="0 0 0 20">
+                    <Button HorizontalAlignment="Left" Content="Sign in"/>
+                    <Button HorizontalAlignment="Right" Content="Log in" Style="{StaticResource MaterialDesignFlatButton}"/>
+                </Grid>
+
+                <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Enter username" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="Enter password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                <PasswordBox x:Name="passBoxRep" materialDesign:HintAssist.Hint="Repeat your password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                <TextBox x:Name="textBoxEmail" materialDesign:HintAssist.Hint="Enter Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <Button Content="Sign up" Margin="0 20" Click="ButtonSignUpClick"/>
+            </StackPanel>
+        </Border>
+    </Grid>
 </Window>
