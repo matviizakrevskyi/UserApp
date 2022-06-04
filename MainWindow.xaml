@@ -19,7 +19,7 @@
                     <Button HorizontalAlignment="Right" Content="Log in" Style="{StaticResource MaterialDesignFlatButton}"/>
                 </Grid>
 
-                <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Enter username" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="textBoxUsername" materialDesign:HintAssist.Hint="Enter username" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="Enter password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
                 <PasswordBox x:Name="passBoxRep" materialDesign:HintAssist.Hint="Repeat your password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
                 <TextBox x:Name="textBoxEmail" materialDesign:HintAssist.Hint="Enter Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>

@@ -20,3 +20,12 @@ C:\Users\Lenovo\source\repos\UserApp\obj\Debug\UserApp.csproj.CoreCompileInputs.
 C:\Users\Lenovo\source\repos\UserApp\obj\Debug\UserApp.csproj.CopyComplete
 C:\Users\Lenovo\source\repos\UserApp\obj\Debug\UserApp.exe
 C:\Users\Lenovo\source\repos\UserApp\obj\Debug\UserApp.pdb
+C:\Users\Lenovo\source\repos\UserApp\bin\Debug\UserBD.db
+C:\Users\Lenovo\source\repos\UserApp\bin\Debug\EntityFramework.dll
+C:\Users\Lenovo\source\repos\UserApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lenovo\source\repos\UserApp\bin\Debug\System.Data.SQLite.dll
+C:\Users\Lenovo\source\repos\UserApp\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Lenovo\source\repos\UserApp\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Lenovo\source\repos\UserApp\bin\Debug\EntityFramework.xml
+C:\Users\Lenovo\source\repos\UserApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lenovo\source\repos\UserApp\bin\Debug\System.Data.SQLite.xml

@@ -20,22 +20,26 @@ namespace UserApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        ApplicationContext db;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            db = new ApplicationContext();
         }
 
         private void ButtonSignUpClick(object sender, RoutedEventArgs e)
         {
-            string login = textBoxLogin.Text.Trim();
+            string username = textBoxUsername.Text.Trim();
             string password = passBox.Password.Trim();
             string passwordRep = passBoxRep.Password.Trim();
             string email = textBoxEmail.Text.Trim();  //.ToLower().Trim() - фильтры
 
-            if (login.Length < 5)   //---  проверка логина
+            if (username.Length < 5)   //---  проверка логина
             {
-                textBoxLogin.ToolTip = "This field is entered incorrectly!";   //подсказка когда наводишь мышью
-                textBoxLogin.Background = Brushes.DarkRed;
+                textBoxUsername.ToolTip = "This field is entered incorrectly!";   //подсказка когда наводишь мышью
+                textBoxUsername.Background = Brushes.DarkRed;
             }
             else if (password.Length < 5)  //---  проверка пароля
             {
@@ -54,8 +58,8 @@ namespace UserApp
             }
             else  //--- если проверка прошла успешно ---//
             {
-                textBoxLogin.ToolTip = "";
-                textBoxLogin.Background = Brushes.Transparent;
+                textBoxUsername.ToolTip = "";
+                textBoxUsername.Background = Brushes.Transparent;
                 passBox.ToolTip = "";
                 passBox.Background = Brushes.Transparent;
                 passBoxRep.ToolTip = "";
@@ -64,6 +68,9 @@ namespace UserApp
                 textBoxEmail.Background = Brushes.Transparent;
 
                 MessageBox.Show("Nice!!!");
+                User user = new User(username, password, email);
+                db.Users.Add(user);
+                db.SaveChanges();
             }
 
         }
