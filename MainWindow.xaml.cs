@@ -67,12 +67,30 @@ namespace UserApp
                 textBoxEmail.ToolTip = "";
                 textBoxEmail.Background = Brushes.Transparent;
 
-                MessageBox.Show("Nice!!!");
+                MessageBox.Show("You have successfully registered!");
                 User user = new User(username, password, email);
                 db.Users.Add(user);
                 db.SaveChanges();
+                UserPageWindow userPageWindow = new UserPageWindow(username, password);
+                userPageWindow.Show();
+                this.Hide();
             }
 
+        }
+
+        private void ButtonLogInWindowClick(object sender, RoutedEventArgs e)
+        {
+            AuthWindow authWindow = new AuthWindow();
+            authWindow.Show();
+            this.Hide();
+        }
+
+        private void ButtonClearClick(object sender, RoutedEventArgs e)
+        {
+            textBoxUsername.Text = "";
+            passBox.Password = "";
+            passBoxRep.Password = "";
+            textBoxEmail.Text = "";
         }
     }
 }

@@ -29,3 +29,7 @@ C:\Users\Lenovo\source\repos\UserApp\bin\Debug\System.Data.SQLite.Linq.dll
 C:\Users\Lenovo\source\repos\UserApp\bin\Debug\EntityFramework.xml
 C:\Users\Lenovo\source\repos\UserApp\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Lenovo\source\repos\UserApp\bin\Debug\System.Data.SQLite.xml
+C:\Users\Lenovo\source\repos\UserApp\obj\Debug\AuthWindow.g.cs
+C:\Users\Lenovo\source\repos\UserApp\obj\Debug\AuthWindow.baml
+C:\Users\Lenovo\source\repos\UserApp\obj\Debug\UserPageWindow.g.cs
+C:\Users\Lenovo\source\repos\UserApp\obj\Debug\UserPageWindow.baml
