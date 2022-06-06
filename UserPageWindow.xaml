@@ -17,7 +17,9 @@
                     <TextBlock Text="User account" FontSize="30" FontWeight="Bold"/>
                     <Button HorizontalAlignment="Right" Content="Log out" Click="ButtonLogOutClick" Style="{StaticResource MaterialDesignFlatButton}"/>
                 </Grid>
-                <TextBlock x:Name="hi" Margin="15" FontSize="18"/>
+                <TextBlock x:Name="hi" Text="hello" Margin="15" TextAlignment="Center" FontSize="18"/>
+                <Button Content="Show your tickets" Margin="40 0 40 0" Click="ButtonShowBiletsClick"/>
+                <ListView x:Name="listofbilets" Margin="10"/>
             </StackPanel>
         </Border>
     </Grid>

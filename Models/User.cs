@@ -8,7 +8,6 @@ namespace UserApp
 {
     class User
     {
-        //UserApp.exe.Config line 10
         public int ID { get; set; }
 
         private string username, password, email;

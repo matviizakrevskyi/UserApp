@@ -25,6 +25,7 @@ namespace UserApp
 
             ApplicationContext db = new ApplicationContext();
             hi.Text = $"Hello, {username}";
+
         }
 
         private void ButtonLogOutClick(object sender, RoutedEventArgs e)
@@ -32,6 +33,20 @@ namespace UserApp
             AuthWindow authWindow = new AuthWindow();
             authWindow.Show();
             this.Hide();
+        }
+
+        private void ButtonShowBiletsClick(object sender, RoutedEventArgs e)
+        {
+            List<string> bilets = new List<string>();
+
+            if (bilets.Count() == 0)
+            {
+                listofbilets.ItemsSource = new List<string> { "You don't have tickets yet!" };
+            }
+            else
+            {
+                listofbilets.ItemsSource = bilets;
+            }
         }
     }
 }
