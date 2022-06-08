@@ -6,31 +6,35 @@
         xmlns:local="clr-namespace:UserApp"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Users app" Height="600" Width="800">
+        Title="Users app" Height="700" Width="680">
     <Grid Background="#ffdadada">
-        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="750" CornerRadius="20">
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="600" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
                 <Grid Margin="0 0 0 20">
                     <TextBlock Text="Available tickets" FontSize="30" FontWeight="Bold"/>
-                    <Button x:Name="usernamebutton" HorizontalAlignment="Right" Content="Account" Click="ButtonAcoountClick" Style="{StaticResource MaterialDesignFlatButton}"/>
+
+                    <materialDesign:Badged
+                          Badge="{materialDesign:PackIcon Account}"
+                          BadgeColorZoneMode="SecondaryMid"
+                          HorizontalAlignment="Right">
+                        <Button x:Name="usernamebutton" HorizontalAlignment="Right" Content="Account" Click="ButtonAcoountClick" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    </materialDesign:Badged>
                 </Grid>
                 <Separator/>
                 <TextBlock x:Name="countTickets" Text="Number of results: " Margin="0 10" FontSize="17"/>
                 <ListView x:Name="listofFlights">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Width="670" HorizontalAlignment="Center">
-                                <WrapPanel>
-                                    <TextBlock Text="{Binding From}"/>
-                                    <TextBlock Text=" == "/>
-                                    <TextBlock Text="{Binding Time}"/>
-                                    <TextBlock Text=" => "/>
-                                    <TextBlock Text="{Binding To}"/>
-                                </WrapPanel>
-
+                            <Grid Width="450" Margin="0 0 0 20" HorizontalAlignment="Center">
+                                <TextBlock Text="{Binding From}" Margin="0 0 290 0" TextAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding To}" Margin="40 0 0 0" TextAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Departure}" Margin="0 17 290 0" TextAlignment="Center"/>
+                                <TextBlock Text="{Binding Arrival}" Margin="40 17 0 0" TextAlignment="Center"/>
+                                <materialDesign:PackIcon Kind="ArrowRightBoldBox" Margin="-125 5 0 0" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding Time}" Margin="-125 19 0 0" HorizontalAlignment="Center"/>
                                 <Button x:Name="currentBtn" HorizontalAlignment="Right" Width="50" Content="{Binding ID}" Click="ButtonBuyClick"/>
                             </Grid>
                         </DataTemplate>

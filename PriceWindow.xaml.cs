@@ -78,15 +78,29 @@ namespace UserApp
 
         private void ecobtn_Click(object sender, RoutedEventArgs e)
         {
-            Purchase purchase = new Purchase(flight.ID, user.ID);
+            btnmethod("Economy");
+        }
+        private void prembtn_Click(object sender, RoutedEventArgs e)
+        {
+            btnmethod("Premium economy");
+        }
+        private void busbtn_Click(object sender, RoutedEventArgs e)
+        {
+            btnmethod("Business class");
+        }
+        private void frstbtn_Click(object sender, RoutedEventArgs e)
+        {
+            btnmethod("First class");
+        }
+
+        public void btnmethod(string cabinclass)
+        {
+            Purchase purchase = new Purchase(flight.ID, user.ID, prices.Find(p => p.Type == cabinclass && p.IDFlight == flight.ID).ID);
             ApplicationContext db = new ApplicationContext();
             db.Purchases.Add(purchase);
             db.SaveChanges();
             MessageBox.Show("You have successfully bought a ticket");
-            UserPageWindow userPageWindow = new UserPageWindow(user.Username, user.Password);
-            userPageWindow.Show();
             this.Hide();
-
         }
     }
 }

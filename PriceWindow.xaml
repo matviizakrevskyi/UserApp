@@ -40,7 +40,7 @@
                     <TextBlock x:Name="premavail" Margin="155 0 0 0" Text="Unavailable"/>
                     <TextBlock Margin="280 0 0 0">Price:</TextBlock>
                     <TextBlock x:Name="premprice" Margin="320 0 0 0" Text="0$"/>
-                    <Button x:Name="prembtn" Margin="0,-8,0,8" HorizontalAlignment="Right" IsEnabled="False" Content="Buy"/>
+                    <Button x:Name="prembtn" Margin="0,-8,0,8" HorizontalAlignment="Right" IsEnabled="False" Content="Buy" Click="prembtn_Click"/>
                 </Grid>
                 <Grid Margin="0 10">
                     <materialDesign:PackIcon Kind="AlphaBBox"/>
@@ -48,7 +48,7 @@
                     <TextBlock x:Name="busavail" Margin="155 0 0 0" Text="Unavailable"/>
                     <TextBlock Margin="280 0 0 0">Price:</TextBlock>
                     <TextBlock x:Name="busprice" Margin="320 0 0 0" Text="0$"/>
-                    <Button x:Name="busbtn" Margin="0,-8,0,8" HorizontalAlignment="Right" IsEnabled="False" Content="Buy"/>
+                    <Button x:Name="busbtn" Margin="0,-8,0,8" HorizontalAlignment="Right" IsEnabled="False" Content="Buy" Click="busbtn_Click"/>
                 </Grid>
                 <Grid Margin="0 10">
                     <materialDesign:PackIcon Kind="AlphaFBox" />
@@ -56,7 +56,7 @@
                     <TextBlock x:Name="frstavail" Margin="155 0 0 0" Text="Unavailable"/>
                     <TextBlock Margin="280 0 0 0">Price:</TextBlock>
                     <TextBlock x:Name="frstprice" Margin="320 0 0 0" Text="0$"/>
-                    <Button x:Name="frstbtn" Margin="0,-8,0,8" HorizontalAlignment="Right" IsEnabled="False" Content="Buy"/>
+                    <Button x:Name="frstbtn" Margin="0,-8,0,8" HorizontalAlignment="Right" IsEnabled="False" Content="Buy" Click="frstbtn_Click"/>
                 </Grid>
             </StackPanel>
         </Border>
