@@ -12,7 +12,7 @@ namespace UserApp
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Flight> Flights { get; set; }
-        public DbSet<Price_> Prices { get; set; }
+        public DbSet<Price> Prices { get; set; }
         public DbSet<Purchase> Purchases { get; set; }
 
         public ApplicationContext() : base("DefaultConnection") { }

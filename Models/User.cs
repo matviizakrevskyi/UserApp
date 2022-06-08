@@ -9,24 +9,10 @@ namespace UserApp
     class User
     {
         public int ID { get; set; }
-
-        private string username, password, email;
         
-        public string Username
-        {
-            get { return username; }
-            set { username = value; }
-        }
-        public string Password
-        {
-            get { return password; }
-            set { password = value; }
-        }
-        public string Email
-        {
-            get { return email; }
-            set { email = value; }
-        }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
 
 
         public User() { }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UserApp.Models;
 
 namespace UserApp
 {
@@ -19,12 +20,19 @@ namespace UserApp
     /// </summary>
     public partial class UserPageWindow : Window
     {
+        User thisUser;
+        ApplicationContext db;
+        Purchase purchase;
+        Flight flight;
+
         public UserPageWindow(string username, string pass)
         {
             InitializeComponent();
 
-            ApplicationContext db = new ApplicationContext();
-            hi.Text = $"Hello, {username}";
+            db = new ApplicationContext();
+            thisUser = db.Users.ToList().Find(i => i.Username == username && i.Password == pass);
+            hi.Text = $"Hello, {thisUser.Username}";
+            
 
         }
 
@@ -37,16 +45,41 @@ namespace UserApp
 
         private void ButtonShowBiletsClick(object sender, RoutedEventArgs e)
         {
-            List<string> bilets = new List<string>();
+            var prchs =
+                from p in db.Purchases
+                where p.IDUser == thisUser.ID
+                select p;
+
+            IEnumerable<Flight> bilets = new List<Flight>();
+
+            foreach (Purchase p in prchs)
+            {
+                bilets =
+                    from b in db.Flights
+                    where b.ID == p.IDFlight
+                    select b;
+            }
 
             if (bilets.Count() == 0)
             {
-                listofbilets.ItemsSource = new List<string> { "You don't have tickets yet!" };
+                nobilets.Text = "You don't have tickets yet!";
+                listofbilets.ItemsSource = null;
             }
             else
             {
-                listofbilets.ItemsSource = bilets;
+                listofbilets.ItemsSource = bilets.ToList();
             }
+
+            //ApplicationContext db = new ApplicationContext();
+
+            //listofbilets.ItemsSource = db.Flights.ToList();
+        }
+
+        private void ButtonBuyClick(object sender, RoutedEventArgs e)
+        {
+            PurchaseWindow purchaseWindow = new PurchaseWindow(thisUser.ID);
+            purchaseWindow.Show();
+            this.Hide();
         }
     }
 }

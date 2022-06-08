@@ -9,8 +9,20 @@ namespace UserApp.Models
     class Purchase
     {
         public int ID { get; set; }
-        private int idFlight, idUser;
-        public int IDFlight { get { return idFlight; } set { idFlight = value; } }
-        public int IDUser { get { return idUser; } set { idUser = value; } }
+        public int IDFlight { get; set; }
+        public int IDUser { get; set; }
+
+        public Purchase() { }
+        public Purchase(int iDFlight, int iDUser)
+        {
+            IDFlight = iDFlight;
+            IDUser = iDUser;
+        }
+        public Purchase(int iD, int iDFlight, int iDUser)
+        {
+            ID = iD;
+            IDFlight = iDFlight;
+            IDUser = iDUser;
+        }   
     }
 }

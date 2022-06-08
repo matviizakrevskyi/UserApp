@@ -1,4 +1,4 @@
-﻿<Window x:Class="UserApp.UserPageWindow"
+﻿<Window x:Class="UserApp.PurchaseWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,24 +6,23 @@
         xmlns:local="clr-namespace:UserApp"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Users app" Height="700" Width="700">
+        Title="Users app" Height="600" Width="800">
     <Grid Background="#ffdadada">
-        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="750" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
                 <Grid Margin="0 0 0 20">
-                    <TextBlock Text="User account" FontSize="30" FontWeight="Bold"/>
-                    <Button HorizontalAlignment="Right" Content="Log out" Click="ButtonLogOutClick" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    <TextBlock Text="Available tickets" FontSize="30" FontWeight="Bold"/>
+                    <Button x:Name="usernamebutton" HorizontalAlignment="Right" Content="Account" Click="ButtonAcoountClick" Style="{StaticResource MaterialDesignFlatButton}"/>
                 </Grid>
-                <TextBlock x:Name="hi" Text="hello" Margin="15" TextAlignment="Center" FontSize="18"/>
-                <Button Content="Show your tickets" Margin="40 0 40 0" Click="ButtonShowBiletsClick"/>
-                <TextBlock x:Name="nobilets"/>
-                <ListView x:Name="listofbilets" Margin="10">
+                <Separator/>
+                <TextBlock x:Name="countTickets" Text="Number of results: " Margin="0 10" FontSize="17"/>
+                <ListView x:Name="listofFlights">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Width="500" HorizontalAlignment="Center">
+                            <Grid Width="670" HorizontalAlignment="Center">
                                 <WrapPanel>
                                     <TextBlock Text="{Binding From}"/>
                                     <TextBlock Text=" == "/>
@@ -31,11 +30,12 @@
                                     <TextBlock Text=" => "/>
                                     <TextBlock Text="{Binding To}"/>
                                 </WrapPanel>
+
+                                <Button x:Name="currentBtn" HorizontalAlignment="Right" Width="50" Content="{Binding ID}" Click="ButtonBuyClick"/>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Content="Buy new tickets" Margin="40 0 40 0" Click="ButtonBuyClick"/>
             </StackPanel>
         </Border>
     </Grid>

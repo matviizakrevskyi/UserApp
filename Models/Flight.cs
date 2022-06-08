@@ -9,29 +9,28 @@ namespace UserApp.Models
     class Flight
     {
         public int ID { get; set; }
-
-        private int day;
-
-        private string name, from, to, departure, arrival;
-
-        public int Day { get { return day; } set { day = value; } }
-
-        public string Name { get { return name; } set { name = value; } }
-        public string From { get { return from; } set { from = value; } }
-        public string To { get { return to; } set { to = value; } }
-        public string Departure { get { return departure; } set { departure = value; } }
-        public string Arrival { get { return arrival; } set { arrival = value; } }
+        public string Name { get; set; }
+        public string From { get; set; }
+        public string To { get; set; }
+        public string Departure { get; set; }
+        public string Arrival { get; set; }
+        public string Time { get; set; }
 
 
         public Flight() { }
-        public Flight(string name, string from, string to, int day, string departure, string arrival)
+        public Flight(string name, string from, string to, string departure, string arrival, string time)
         {
             Name = name;
             From = from;
             To = to;
-            Day = day;
             Departure = departure;
             Arrival = arrival;
+            Time = time;
+        }
+
+        public override string ToString()
+        {
+            return $"ID: {ID}, Name: {Name}, From-To: {From}-{To}, Dep-Arr: {Departure}-{Arrival}";
         }
     }
 }

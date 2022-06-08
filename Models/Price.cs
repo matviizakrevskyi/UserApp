@@ -6,22 +6,19 @@ using System.Threading.Tasks;
 
 namespace UserApp.Models
 {
-    class Price_
+    class Price
     {
         public int ID { get; set; }
-        private int idFlight;
-        public int IDFlight { get { return idFlight; } set { idFlight = value; } }
-        private string name;
-        public string Name { get { return name; } set { name = value; } }
-        private int price;
-        public int Price { get { return price; } set { price = value; } }
+        public int IDFlight { get; set; }
+        public string Type { get; set; }
+        public string Cost { get; set; }
 
-        public Price_() { }
-        public Price_(int idFlight, string name, int price)
+        public Price() { }
+        public Price(int idFlight, string type, string cost)
         {
             IDFlight = idFlight;
-            Name = name;
-            Price = price;
+            Type = type;
+            Cost = cost;
         }
     }
 }
